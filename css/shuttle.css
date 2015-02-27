@@ -133,9 +133,6 @@ body {
 #results {
     display: none;
 }
-#shuttle .btn-default {
-    width: 100%!important;
-}
 @-webkit-keyframes flip {
     100% {
         opacity: 1;
@@ -513,4 +510,14 @@ section#departures{
 }
 .table{
 	text-align:center;
+}
+a{
+	display:block;
+}
+a button:hover{
+	text-decoration:none;
+}
+.download-pdf{
+	padding:7px;
+	font-size:1.1em;
 }
