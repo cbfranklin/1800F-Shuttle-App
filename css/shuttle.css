@@ -48,8 +48,8 @@ body {
 }
 #viewFull a {
     display: block;
-    margin-top: 2px;
-    font-size: 12px;
+    font-size: 1em;
+    padding:10px;
 }
 #shuttle .timetable {
     border: 1px solid #ccc;
@@ -68,12 +68,12 @@ body {
 #shuttle h2 {
     border-bottom: 2px solid #999;
     padding-bottom: 5px;
-    font-size: 22px;
+    font-size: 2em;
     margin-top: 0;
 }
 #shuttle h3 {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1.5em;
     text-align: center;
 }
 #shuttle h4, #shuttle h5, #shuttle h6, #shuttle h3 {
@@ -83,17 +83,17 @@ body {
 #shuttle .willDepart {
     display: block;
     margin: 0 0 5px;
-    font-size: 12px;
+    font-size: 1em;
 }
 #shuttle h4 {
     text-align: center;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1.2em;
 }
 #shuttle #board h5 {
     text-align: center;
     color: #0ea92a;
-    font-size: 20px;
+    font-size: 1.8em;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
     margin-bottom: 5px;
@@ -105,7 +105,7 @@ body {
     color: #333;
 }
 #results h5 {
-    font-size: 18px;
+    font-size: 1.5em;
     text-align: center;
     padding-top: 5px;
 }
