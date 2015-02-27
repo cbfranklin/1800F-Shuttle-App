@@ -16,7 +16,7 @@ function navigation() {
         	if(window.innerWidth > 991){
         		var nav = $(this).attr('data-nav');
 	            $('.nav-secondary [data-nav=' + nav + ']').show().siblings().hide;
-	            $('.hero').addClass('blurred');
+	            //$('.hero').addClass('blurred');
 	            $('nav [data-nav=' + nav + ']').addClass('active')
         	}
         },
