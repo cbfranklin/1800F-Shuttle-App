@@ -267,6 +267,7 @@ nav ul {
 }
 .btn span.glyphicon{
     float:left;
+    padding-right:5px;
 }
 h2 .glyphicon{
     float:right;
@@ -281,6 +282,7 @@ h2 .glyphicon{
     float:left;
     cursor:pointer;
     display:table;
+    z-index:100;
 }
 .hero-inner{
     /*top: 50%;
