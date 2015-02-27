@@ -5,6 +5,7 @@ function navigation() {
             $('section#'+nav).show();
             $('nav').removeClass('active');
             $('.menu-toggle').removeClass('active');
+            window.scrollTo(0,0);
         }
         else{
             routie('/departures');
