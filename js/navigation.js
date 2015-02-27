@@ -49,13 +49,10 @@ function navigation() {
         $('.nav-primary li').removeClass('active');
     });
 
-    /*$('.nav-primary li,.btn-navigation').on('click',function(){
+    $('.btn-navigation').on('click',function(){
         var nav = $(this).attr('data-nav');
-        $('section').hide();
-        $('section#'+nav).show();
-        $('nav').removeClass('active')
-        $('.menu-toggle').removeClass('active')
-    })*/
+        routie('/'+nav);
+    })
     /* TEMP */
     /*$('.nav-secondary li').on('click',function(){
         $('.menu-toggle').removeClass('active');
