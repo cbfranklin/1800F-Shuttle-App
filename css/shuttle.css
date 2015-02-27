@@ -274,9 +274,8 @@ nav ul {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);*/
     display:table-cell;
-    text-align:center;
     vertical-align: middle;
-    width:300px;
+    padding-left:60px;
 }
 .hero.blurred {
     color: #337AB7;
