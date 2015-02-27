@@ -47,6 +47,7 @@ if (!Array.prototype.indexOf) {
 
 $(function(){
 	initShuttle();
+	navigation();
 });
 
 function initShuttle(){

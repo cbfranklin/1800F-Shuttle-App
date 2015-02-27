@@ -4,53 +4,87 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="js/moment.js"></script>
+<script src="js/navigation.js"></script>
 <script src="js/shuttle.js"></script>
-
-<link rel="stylesheet" href="css/shuttle.css" type="text/css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/shuttle.css" type="text/css">
 </head>
 <body>
+  <div class="hero"><div class="hero-inner">1800F Shuttle</div>
+        <a class="menu-toggle">
+          <svg class="hamburger" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             width="50px" height="50px" viewBox="3.5 4.5 30 35" xml:space="preserve">
+            <g class="svg-menu-toggle">
+              <path class="bar" d="M20.945,8.75c0,0.69-0.5,1.25-1.117,1.25H3.141c-0.617,0-1.118-0.56-1.118-1.25l0,0
+                c0-0.69,0.5-1.25,1.118-1.25h16.688C20.445,7.5,20.945,8.06,20.945,8.75L20.945,8.75z">
+              </path>
+              <path class="bar" d="M20.923,15c0,0.689-0.501,1.25-1.118,1.25H3.118C2.5,16.25,2,15.689,2,15l0,0c0-0.689,0.5-1.25,1.118-1.25 h16.687C20.422,13.75,20.923,14.311,20.923,15L20.923,15z">
+              </path>
+              <path class="bar" d="M20.969,21.25c0,0.689-0.5,1.25-1.117,1.25H3.164c-0.617,0-1.118-0.561-1.118-1.25l0,0
+                c0-0.689,0.5-1.25,1.118-1.25h16.688C20.469,20,20.969,20.561,20.969,21.25L20.969,21.25z">
+              </path>
+            <rect width="20" height="20" fill="none"></rect>
+            </g>
+          </svg>
+        </a>
+      </div>
+  <nav>
+    <ul class="nav-primary">
+      <li data-nav="departures"><a href="#">Live Departures</a></li>
+      <li data-nav="planner"><a href="#">Trip Planner</a></li>
+      <li data-nav="schedule"><a href="#">Full Schedule</a></li>
+    </ul>
+</nav>
 <div id="shuttle" class="container">
-<h2>GSA Shuttle</h2><div id="board"></div><div id="search"><h2>Trip Planner</h2><form><div class="form-group"><label for="stations" class="control-label">Departing from:</label><select id="stations" class="form-control"></select><br><label for="time" class="control-label">Time:</label>
+<section id="departures">
+  <h2>Live Departures</h2>
+  <div id="board"></div>
+
+  <button class="btn btn-default btn-block btn-navigation" data-nav="planner">Trip Planner</button>
+  <button class="btn btn-default btn-block btn-navigation" data-nav="schedule">Full Schedule</button>
+
+</section>
+<section id="planner">
+  <div id="search"><h2>Trip Planner</h2><form><div class="form-group"><label for="stations" class="control-label">Departing from:</label><select id="stations" class="form-control"></select><br><label for="time" class="control-label">Time:</label>
 
 <select id="time" class="form-control">
-	<option val="08:30" selected="selected">8:30 AM</option>
-	<option val="08:45">8:45 AM</option>
-	<option val="09:00">9:00 AM</option>
-	<option val="09:15">9:15 AM</option>
-	<option val="09:30">9:30 AM</option>
-	<option val="09:45">9:45 AM</option>
-	<option val="10:00">10:00 AM</option>
-	<option val="10:15">10:15 AM</option>
-	<option val="10:30">10:30 AM</option>
-	<option val="10:45">10:45 AM</option>
-	<option val="11:00">11:00 AM</option>
-	<option val="11:15">11:15 AM</option>
-	<option val="11:30">11:30 AM</option>
-	<option val="11:45">11:45 AM</option>
-	<option val="12:00">12:00 PM</option>
-	<option val="12:15">12:15 PM</option>
-	<option val="12:30">12:30 PM</option>
-	<option val="12:45">12:45 PM</option>
-	<option val="13:00">1:00 PM</option>
-	<option val="13:15">1:15 PM</option>
-	<option val="13:30">1:30 PM</option>
-	<option val="13:45">1:45 PM</option>
-	<option val="14:00">2:00 PM</option>
-	<option val="14:15">2:15 PM</option>
-	<option val="14:30">2:30 PM</option>
-	<option val="14:45">2:45 PM</option>
-	<option val="15:00">3:00 PM</option>
-	<option val="15:15">3:15 PM</option>
-	<option val="15:30">3:30 PM</option>
-	<option val="15:45">3:45 PM</option>
-	<option val="16:00">4:00 PM</option>
-	<option val="16:15">4:15 PM</option>
-	<option val="16:30">4:30 PM</option>
-	<option val="16:45">4:45 PM</option>
-	<option val="17:00">5:00 PM</option>
-	<option val="17:15">5:15 PM</option>
-	<option val="17:30">5:30 PM</option>
+  <option val="08:30" selected="selected">8:30 AM</option>
+  <option val="08:45">8:45 AM</option>
+  <option val="09:00">9:00 AM</option>
+  <option val="09:15">9:15 AM</option>
+  <option val="09:30">9:30 AM</option>
+  <option val="09:45">9:45 AM</option>
+  <option val="10:00">10:00 AM</option>
+  <option val="10:15">10:15 AM</option>
+  <option val="10:30">10:30 AM</option>
+  <option val="10:45">10:45 AM</option>
+  <option val="11:00">11:00 AM</option>
+  <option val="11:15">11:15 AM</option>
+  <option val="11:30">11:30 AM</option>
+  <option val="11:45">11:45 AM</option>
+  <option val="12:00">12:00 PM</option>
+  <option val="12:15">12:15 PM</option>
+  <option val="12:30">12:30 PM</option>
+  <option val="12:45">12:45 PM</option>
+  <option val="13:00">1:00 PM</option>
+  <option val="13:15">1:15 PM</option>
+  <option val="13:30">1:30 PM</option>
+  <option val="13:45">1:45 PM</option>
+  <option val="14:00">2:00 PM</option>
+  <option val="14:15">2:15 PM</option>
+  <option val="14:30">2:30 PM</option>
+  <option val="14:45">2:45 PM</option>
+  <option val="15:00">3:00 PM</option>
+  <option val="15:15">3:15 PM</option>
+  <option val="15:30">3:30 PM</option>
+  <option val="15:45">3:45 PM</option>
+  <option val="16:00">4:00 PM</option>
+  <option val="16:15">4:15 PM</option>
+  <option val="16:30">4:30 PM</option>
+  <option val="16:45">4:45 PM</option>
+  <option val="17:00">5:00 PM</option>
+  <option val="17:15">5:15 PM</option>
+  <option val="17:30">5:30 PM</option>
 </select>
 <br>
 
@@ -59,18 +93,15 @@
 
 </form></div></div>
 
-<div id="results"><h3>Search Results</h3>
+<div id="results" class="animated zoomIn"><h3>Search Results</h3>
 <div></div><br>
 <button class="btn btn-primary btn-block searchAgain">Search Again</button>
 </div>
-
-<div id="viewFull" class="animate"><h4>View the Full Schedule</h4></div>
-
-<div id="fullSchedule">
-    <br />
-
-    <h5><a href="/portal/getMediaData?mediaId=617510" target="_blank">Download the
-    PDF</a></h5>
+</section>
+<section id="schedule">
+<h2>Full Schedule</h2>
+<a href="http://insite.gsa.gov/portal/getMediaData?mediaId=617510" target="_blank">Download PDF</a>
+<div>
 
     <table class="table">
       <tbody>
@@ -400,6 +431,9 @@
       </tbody>
     </table>
   </div>
+</div>
+
+
 </div>
 </body>
 </html>
