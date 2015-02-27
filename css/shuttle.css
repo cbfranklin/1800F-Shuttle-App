@@ -207,7 +207,6 @@ nav {
     overflow: hidden;
 }
 nav ul {
-    display: block;
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -216,7 +215,7 @@ nav ul {
     float:left;
 }
 .nav-primary li {
-    display: block;
+    display:table;
     float: left;
     list-style: none;
     width: 15%;
@@ -247,16 +246,17 @@ nav ul {
     border-color: transparent transparent #337AB7 transparent;
 }
 .nav-primary li span {
-    display: block;
     color: #337AB7;
     text-decoration: none;
     font-weight: bold;
-    text-align: center;
     width: 100%;
-    position: absolute;
-    top: 50%;
+    height:100%;
+    /*top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);*/
+    display:table-cell;
+    text-align:center;
+    vertical-align: middle;
 }
 .hero {
     background: #337AB7;
@@ -267,12 +267,16 @@ nav ul {
     position:fixed;
     float:left;
     cursor:pointer;
+    display:table;
 }
 .hero-inner{
-    position: absolute;
-    top: 50%;
+    /*top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);*/
+    display:table-cell;
+    text-align:center;
+    vertical-align: middle;
+    width:300px;
 }
 .hero.blurred {
     color: #337AB7;
@@ -359,7 +363,6 @@ nav ul {
         box-shadow: 0px 0px 3px -1px rgba(125,125,125,1);
 	}
     .hero-inner{
-        transform: translateY(-50%);
         left: 70px;
     }
     nav ul{
