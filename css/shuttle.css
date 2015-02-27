@@ -315,6 +315,7 @@ h2 .glyphicon{
     padding-top: 20px;
     position:relative;
     cursor:pointer;
+    font-size:20px;
 }
 .nav-secondary li:hover{
     background:#2D86DB;
@@ -434,7 +435,7 @@ h2 .glyphicon{
     .nav-primary li::before{
         content:'\25B6';
         position:absolute;
-        top:18px;
+        top:13px;
         right:10px;
         color:#337AB7;
         width:auto;
