@@ -277,6 +277,12 @@ nav ul {
     vertical-align: middle;
     padding-left:60px;
 }
+.hero-insite{
+    display:table-cell;
+    vertical-align: middle;
+    text-align:right;
+    padding-right:10px;
+}
 .hero.blurred {
     color: #337AB7;
     background: #ededed;

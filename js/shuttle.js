@@ -68,16 +68,12 @@ function initShuttle(){
 		searchAgain();
 		return false;
 	});
-	$('#shuttle #viewFull h4').on('click', function() {
-		$('#fullSchedule').slideToggle();
-		return false;
-	});
 	
 };
 
 function initStations() {
 	for (var i = 0; i < stations.length; i++) {
-		var stationDiv = '<div class="station" data-station="' + i + '"><h3>Departs ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div>';
+		var stationDiv = '<div class="station" data-station="' + i + '"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div>';
 		$('#board').append(stationDiv);
 		var stationOpt = '<option value="' + i + '">' + stations[i] + '</option>';
 		$('#search select#stations').append(stationOpt);
@@ -171,7 +167,7 @@ function queue() {
 			}
 		}
 		if (noShuttles === true && $('#shuttle #board .station[data-station=' + i + '] .item').length === 0) {
-			var noShuttlesMessage = '<div class="item animate noShuttles"><h4>No More Shuttles Today</h4></div>';
+			var noShuttlesMessage = '<div class="item animate noShuttles"><h4><strong>No More Shuttles Today</strong></h4></div>';
 			var stationID = i;
 			$('#shuttle #board .station[data-station=' + stationID + ']').append(noShuttlesMessage);
 			$('#shuttle #board .station[data-station=' + stationID + '] .load').hide();
