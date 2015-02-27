@@ -321,7 +321,7 @@ nav ul {
 .menu-toggle{
     display:none;
 }
-@media (min-width:992px){
+/*@media (min-width:992px){
     .nav-primary li::after{
         content: '';
         width: 0;
@@ -333,8 +333,8 @@ nav ul {
         bottom: 7%;
         right: 3%;
     }
-}
-@media (max-width:991px){
+}*/
+/*@media (max-width:991px){*/
 	nav{
 		position:fixed;
 		width:300px;
@@ -503,7 +503,7 @@ nav ul {
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-}
+/*}*/
 
 section{
 	display:none;
