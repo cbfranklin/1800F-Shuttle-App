@@ -264,7 +264,7 @@ nav ul {
     font-size: 22px;
     width: 20%;
     height:60px;
-    position:relative;
+    position:fixed;
     float:left;
     cursor:pointer;
 }
@@ -349,7 +349,7 @@ nav ul {
     }
 	.hero{
 		width:100%;
-        position:absolute;
+        position:fixed;
         top:0;
         left:0;
         height:60px;
