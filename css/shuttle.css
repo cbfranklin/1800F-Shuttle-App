@@ -55,6 +55,9 @@ body {
     border: 1px solid #ccc;
     box-shadow: inset 1px 1px 20px 1px #ddd;
 }
+#shuttle .station{
+    padding:10px;
+}
 #shuttle .timetable table tr:first-child td {
     padding-top: 15px;
     font-weight: 700;
@@ -245,7 +248,7 @@ nav ul {
 .hero.blurred::after {
     border-color: transparent transparent #337AB7 transparent;
 }
-.nav-primary li span {
+.nav-primary li > span {
     color: #337AB7;
     text-decoration: none;
     font-weight: bold;
@@ -257,6 +260,13 @@ nav ul {
     display:table-cell;
     text-align:center;
     vertical-align: middle;
+}
+.nav-primary li > span > span{
+    padding-left:10px;
+    float:left;
+}
+.btn span.glyphicon{
+    float:left;
 }
 .hero {
     background: #337AB7;
