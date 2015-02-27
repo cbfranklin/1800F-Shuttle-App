@@ -511,3 +511,6 @@ section{
 section#departures{
 	display:block;
 }
+.table{
+	text-align:center;
+}
