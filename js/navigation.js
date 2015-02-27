@@ -3,8 +3,6 @@ function navigation() {
         if($('section#'+nav)){
             $('section').hide();
             $('section#'+nav).show();
-            $('nav').removeClass('active');
-            $('.menu-toggle').removeClass('active');
             window.scrollTo(0,0);
         }
         else{
@@ -53,6 +51,8 @@ function navigation() {
     $('.btn-navigation,nav li').on('click',function(){
         var nav = $(this).attr('data-nav');
         routie('/'+nav);
+        $('nav').removeClass('active');
+        $('.menu-toggle').removeClass('active');
     })
     /* TEMP */
     /*$('.nav-secondary li').on('click',function(){
