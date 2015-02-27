@@ -101,7 +101,7 @@ body {
     padding-bottom: 5px;
     margin-bottom: 5px;
 }
-#shuttle #board h5.timeRed {
+.timeRed {
     color: #bf0000;
 }
 #shuttle h5.timeBlack {
@@ -267,6 +267,9 @@ nav ul {
 }
 .btn span.glyphicon{
     float:left;
+}
+h2 .glyphicon{
+    float:right;
 }
 .hero {
     background: #337AB7;
@@ -536,3 +539,6 @@ a{
 	padding:7px;
 	font-size:1.1em;
 }
+a:hover{
+    text-decoration:none!important;
+};

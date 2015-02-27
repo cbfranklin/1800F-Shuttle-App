@@ -167,7 +167,7 @@ function queue() {
 			}
 		}
 		if (noShuttles === true && $('#shuttle #board .station[data-station=' + i + '] .item').length === 0) {
-			var noShuttlesMessage = '<div class="item animate noShuttles"><h4><em>No More Shuttles Today</em></h4></div>';
+			var noShuttlesMessage = '<div class="item animate noShuttles timeRed"><h4><em>No More Shuttles Today</em></h4></div>';
 			var stationID = i;
 			$('#shuttle #board .station[data-station=' + stationID + ']').append(noShuttlesMessage);
 			$('#shuttle #board .station[data-station=' + stationID + '] .load').hide();

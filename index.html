@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>1800F Shuttle</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="js/routie.js"></script>
@@ -15,7 +16,7 @@
     <div class="hero-inner">1800F Shuttle</div>
     <div class="hero-insite">
       <a href="http://insite.gsa.gov">
-        <button type="button" class="btn btn-sm btn-info">Back to InSite</button>
+        <button type="button" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>To InSite</button>
       </a>
     </div>
         <a class="menu-toggle">
@@ -38,21 +39,21 @@
   <nav>
     <ul class="nav-primary">
       <li data-nav="departures"><span>Departures<span class="glyphicon glyphicon-time" aria-hidden="true"></span></span></li>
-      <li data-nav="planner"><span>Trip Planner<span class="glyphicon glyphicon-road" aria-hidden="true"></span></span></li>
-      <li data-nav="schedule"><span>Full Schedule<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span</span></li>
+      <li data-nav="planner"><span>Trip Planner<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span></li>
+      <li data-nav="schedule"><span>Full Schedule<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></span></li>
     </ul>
 </nav>
 <div id="shuttle" class="container">
 <section id="departures">
-  <h2>Departures</h2>
+  <h2>Departures<span class="glyphicon glyphicon-time" aria-hidden="true"></span></h2>
   <div id="board"></div>
 <br>
-<button class="btn btn-default btn-block btn-lg btn-navigation" data-nav="planner"><span class="glyphicon glyphicon-road" aria-hidden="true"></span>Trip Planner</button>
+<button class="btn btn-default btn-block btn-lg btn-navigation" data-nav="planner"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Trip Planner</button>
 <button class="btn btn-default btn-block btn-lg btn-navigation" data-nav="schedule"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Full Schedule</button>
 
 </section>
 <section id="planner">
-  <div id="search"><h2>Trip Planner</h2><form><div class="form-group"><label for="stations" class="control-label">Departing from:</label><select id="stations" class="form-control"></select><br><label for="time" class="control-label">Time:</label>
+  <div id="search"><h2>Trip Planner<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></h2><form><div class="form-group"><label for="stations" class="control-label">Departing from:</label><select id="stations" class="form-control"></select><br><label for="time" class="control-label">Time:</label>
 
 <select id="time" class="form-control">
   <option val="08:30" selected="selected">8:30 AM</option>
@@ -106,8 +107,8 @@
 </div>
 </section>
 <section id="schedule">
-<h2>Full Schedule</h2>
-<a class="download-pdf" href="http://insite.gsa.gov/portal/getMediaData?mediaId=617510" target="_blank">Download PDF</a>
+<h2>Full Schedule<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></h2>
+<a class="download-pdf" href="http://insite.gsa.gov/portal/getMediaData?mediaId=617510" target="_blank"><button class="btn btn-info btn-block"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download PDF</button></a>
 <div>
 
     <table class="table">
