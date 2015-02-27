@@ -2,7 +2,7 @@ function navigation() {
     routie('/:nav', function(nav){
         if($('section#'+nav)){
             $('section').hide();
-            $('section#'+nav).show();
+            $('section#'+nav).show().addClass('animated');
             window.scrollTo(0,0);
         }
         else{

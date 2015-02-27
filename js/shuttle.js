@@ -32,23 +32,6 @@ var schedule = [{
 }];
 var today = moment().format('YYYY-MM-DD');
 var tomorrow = moment().add(1, 'days').format('YYYY-MM-DD');
-if (!Array.prototype.indexOf) {
-	Array.prototype.indexOf = function(elt) {
-		var len = this.length >>> 0;
-		var from = Number(arguments[1]) || 0;
-		from = (from < 0) ? Math.ceil(from) : Math.floor(from);
-		if (from < 0) from += len;
-		for (; from < len; from++) {
-			if (from in this && this[from] === elt) return from;
-		}
-		return -1;
-	};
-}
-
-$(function(){
-	initShuttle();
-	navigation();
-});
 
 function initShuttle(){
 
@@ -57,7 +40,7 @@ function initShuttle(){
 		queue();
 	}
 	else{
-		$('#board').append('<div class="item center animate"><h4>No shuttles today.</h4></div>');
+		$('#board').append('<div class="item center wobble animated timeRed"><h4><em>No Shuttles Today</em></h4></div>');
 		$('#board .item').addClass('animate');
 	}
 	$('#shuttle #search .search').on('click', function() {
@@ -88,7 +71,7 @@ function searchSchedule() {
 	var time = $('#shuttle #search #time option:selected').attr('val');
 	var displayTime = moment(time, 'HH:mm').format('hh:mm A');
 	var time2 = moment(today + ' ' + time).add(90, 'minutes').format('HH:mm');
-	$('<h4>For: ' + sName + ', ' + removeLeadZero(displayTime) + '</h4>').insertAfter('#shuttle #results h3');
+	$('<h4 class="results-for">' + sName + ', ' + removeLeadZero(displayTime) + '</h4>').insertAfter('#shuttle #results h3');
 	for (var m = 0; m < schedule[0].timetable.length; m++) {
 		var testTime = moment(today + ' ' + schedule[0].timetable[m][s]);
 		if ((testTime.isAfter(moment(today + ' ' + time)) && testTime.isBefore(moment(today + ' ' + time2))) || testTime.format('HH:mm') === time) {
@@ -105,7 +88,7 @@ function startCountdown(name, busID, stationID, time) {
 	var duration = moment.duration(diffTime * 1000, 'milliseconds');
 	var id = busID + '-' + stationID + '-' + eventTime;
 	if (stationID !== 'user') {
-		var countdown = '<div id="' + id + '" class="item"><h5></h5></div>';
+		var countdown = '<div id="' + id + '" class="item zoomIn"><h5></h5></div>';
 	} else {
 		var countdown = '<h5 id="' + id + '"></h5>';
 	}
@@ -167,7 +150,7 @@ function queue() {
 			}
 		}
 		if (noShuttles === true && $('#shuttle #board .station[data-station=' + i + '] .item').length === 0) {
-			var noShuttlesMessage = '<div class="item animate noShuttles timeRed"><h4><em>No More Shuttles Today</em></h4></div>';
+			var noShuttlesMessage = '<div class="item zoomIn animated noShuttles timeRed"><h4><em>No More Shuttles Today</em></h4></div>';
 			var stationID = i;
 			$('#shuttle #board .station[data-station=' + stationID + ']').append(noShuttlesMessage);
 			$('#shuttle #board .station[data-station=' + stationID + '] .load').hide();
@@ -210,4 +193,17 @@ function removeLeadZero(val) {
 		var fixed = val;
 	}
 	return fixed;
+}
+
+if (!Array.prototype.indexOf) {
+	Array.prototype.indexOf = function(elt) {
+		var len = this.length >>> 0;
+		var from = Number(arguments[1]) || 0;
+		from = (from < 0) ? Math.ceil(from) : Math.floor(from);
+		if (from < 0) from += len;
+		for (; from < len; from++) {
+			if (from in this && this[from] === elt) return from;
+		}
+		return -1;
+	};
 }

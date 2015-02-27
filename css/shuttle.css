@@ -23,23 +23,6 @@ body {
     perspective: 1300px;
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e8e9ea', GradientType=0);
 }
-
-#board .item.animate,
-#results .item.animate,
-#viewFull.animate {
-    -webkit-transform: rotateX(-80deg);
-    -moz-transform: rotateX(-80deg);
-    transform: rotateX(-80deg);
-    -webkit-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    transform-origin: 0 0;
-    -webkit-animation: flip .8s ease-in-out forwards;
-    -moz-animation: flip .8s ease-in-out forwards;
-    animation: flip .8s ease-in-out forwards;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
 #fullSchedule {
 	text-align:center;
 }
@@ -135,6 +118,9 @@ body {
 }
 #results {
     display: none;
+}
+.results-for{
+    text-decoration:underline;
 }
 @-webkit-keyframes flip {
     100% {
