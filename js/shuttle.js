@@ -73,7 +73,7 @@ function initShuttle(){
 
 function initStations() {
 	for (var i = 0; i < stations.length; i++) {
-		var stationDiv = '<div class="station" data-station="' + i + '"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div>';
+		var stationDiv = '<div class="station col-sm-6" data-station="' + i + '"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div>';
 		$('#board').append(stationDiv);
 		var stationOpt = '<option value="' + i + '">' + stations[i] + '</option>';
 		$('#search select#stations').append(stationOpt);
