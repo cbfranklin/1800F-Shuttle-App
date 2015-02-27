@@ -233,7 +233,7 @@ nav ul {
     color: #ededed;
 }
 
-.nav-primary li:hover a, .nav-primary li.active a {
+.nav-primary li:hover span, .nav-primary li.active span {
     color: #ededed;
 }
 .nav-primary li.active{
@@ -246,7 +246,7 @@ nav ul {
 .hero.blurred::after {
     border-color: transparent transparent #337AB7 transparent;
 }
-.nav-primary li a {
+.nav-primary li span {
     display: block;
     color: #337AB7;
     text-decoration: none;

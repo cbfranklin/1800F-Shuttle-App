@@ -49,7 +49,7 @@ function navigation() {
         $('.nav-primary li').removeClass('active');
     });
 
-    $('.btn-navigation').on('click',function(){
+    $('.btn-navigation,nav li').on('click',function(){
         var nav = $(this).attr('data-nav');
         routie('/'+nav);
     })
