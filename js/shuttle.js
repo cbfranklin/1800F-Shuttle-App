@@ -166,7 +166,7 @@ function queue() {
 		if (noShuttles === true && $('#shuttle #board .station[data-station=' + i + '] .item').length === 0) {
 			var noShuttlesMessage = '<div class="item zoomIn animated noShuttles timeRed"><h4><em>No More Shuttles Today</em></h4></div>';
 			var stationID = i;
-			$('#shuttle #board .station[data-station=' + stationID + ']').append(noShuttlesMessage);
+			$('#shuttle #board .station[data-station=' + stationID + '] .station-timer').append(noShuttlesMessage);
 			$('#shuttle #board .station[data-station=' + stationID + '] .load').hide();
 			$('#shuttle #board .noShuttles').show();
 		}

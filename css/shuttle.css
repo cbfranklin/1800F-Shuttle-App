@@ -516,3 +516,6 @@ a {
 a:hover {
     text-decoration: none!important;
 }
+.noShuttles{
+    padding:10px;
+}
