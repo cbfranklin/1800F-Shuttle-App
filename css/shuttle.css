@@ -4,25 +4,6 @@ body {
 .container{
 	padding-top:85px;
 }
-#results .item, #viewFull {
-    position: relative;
-    display: none;
-    overflow: hidden;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 1px;
-    background: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    opacity: 0;
-    -webkit-animation: flip .8s ease-in-out forwards;
-    -moz-animation: flip .8s ease-in-out forwards;
-    animation: flip .8s ease-in-out forwards;
-    -webkit-perspective: 1300px;
-    -moz-perspective: 1300px;
-    perspective: 1300px;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e8e9ea', GradientType=0);
-}
 #fullSchedule {
 	text-align:center;
 }
@@ -39,7 +20,7 @@ body {
     box-shadow: inset 1px 1px 20px 1px #ddd;
 }
 #shuttle .station{
-    padding:10px;
+    padding:5px;
 }
 #shuttle .timetable table tr:first-child td {
     padding-top: 15px;
@@ -80,7 +61,6 @@ body {
     text-align: center;
     color: #0ea92a;
     font-size: 1.8em;
-    border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
     margin-bottom: 5px;
 }
@@ -121,6 +101,15 @@ body {
 }
 .results-for{
     text-decoration:underline;
+}
+.station-map{
+    width:100%;
+}
+.station-map iframe{
+    height:250px;
+    width:100%;
+    border:0;
+    padding:20px;
 }
 @-webkit-keyframes flip {
     100% {
