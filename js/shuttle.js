@@ -68,9 +68,8 @@ function initShuttle(){
 
 function initStations() {
 	for (var i = 0; i < stations.length; i++) {
-		//var stationDiv = '<div class="station col-sm-6" data-station="' + i + '"><div class="station-timer"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div><div class="station-map"><button class="btn btn-default btn-block show-map"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Map</button><iframe src="'+schedule[0].maps[i]+'"frameborder="0"></iframe></div></div>';
-		var stationDiv = '<div class="station col-sm-6" data-station="' + i + '"><div class="station-timer"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div><div class="station-map"><button class="btn btn-default btn-block show-map"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Map</button><iframe style="display:none" src=""frameborder="0"></iframe></div></div>';
-		//var stationDiv = '<div class="station col-sm-6" data-station="' + i + '"><div class="station-timer"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div></div>';
+		//var stationDiv = '<div class="station col-sm-6" data-station="' + i + '"><div class="station-timer"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div><div class="station-map"><button class="btn btn-default btn-block show-map"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Map</button><iframe style="display:none" src=""frameborder="0"></iframe></div></div>';
+		var stationDiv = '<div class="station col-sm-6" data-station="' + i + '"><div class="station-timer"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div></div>';
 		$('#board').append(stationDiv);
 		var stationOpt = '<option value="' + i + '">' + stations[i] + '</option>';
 		$('#search select#stations').append(stationOpt);
