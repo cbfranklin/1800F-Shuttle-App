@@ -509,10 +509,6 @@ section#departures {
 a {
     display: block;
 }
-.download-pdf {
-    padding: 7px;
-    font-size: 1.1em;
-}
 a:hover {
     text-decoration: none!important;
 }
