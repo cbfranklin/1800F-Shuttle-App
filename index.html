@@ -118,11 +118,12 @@ $(function(){
 <h2>Full Schedule<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></h2>
 <a class="download-pdf" href="http://insite.gsa.gov/portal/getMediaData?mediaId=617510" target="_blank"><button class="btn btn-info btn-block"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download PDF</button></a>
 <div>
-
-    <table class="table">
+  <button data-anchor="departing-1800f" class="btn btn-default btn-block btn-anchor" data-nav="planner"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>Departures from 1800F</button>
+  <button data-anchor="departing-ncr" class="btn btn-default btn-block btn-anchor" data-nav="planner"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>Departures from NCR</button>
+    <table class="table" id="departing-1800f">
       <tbody>
         <tr>
-          <td><strong>Depart:<br />
+          <td><strong>Departing:<br />
           1800F,</strong><br />
           E St side, wing 3 exit</td>
 
@@ -283,10 +284,10 @@ $(function(){
       </tbody>
     </table>
 
-    <table class="table">
+    <table class="table" id="departing-ncr">
       <tbody>
         <tr>
-          <td><strong>Depart:<br />
+          <td><strong>Departing:<br />
           NCR,</strong><br />
           7th &amp; D Sts, SW</td>
 

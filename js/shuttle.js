@@ -63,6 +63,11 @@ function initShuttle(){
 			$(this).addClass('active').siblings('iframe').show().addClass('active').attr('src',schedule[0].maps[station]);
 		}
 	})
+
+	$('.btn-anchor').on('click',function(){
+		var anchor = $(this).attr('data-anchor');
+		$('#'+anchor).scrollToAnchor(-65);
+	});
 	
 };
 
@@ -220,3 +225,17 @@ if (!Array.prototype.indexOf) {
 		return -1;
 	};
 }
+jQuery.fn.extend({
+    scrollToAnchor: function(theOffset, theTime) {
+        var theSelector = this;
+        if (!theTime) {
+            var theTime = 500
+        }
+        if (!theOffset) {
+            var theOffset = 0;
+        }
+        $('html,body').animate({
+            scrollTop: theSelector.offset().top + theOffset
+        }, theTime);
+    }
+});
