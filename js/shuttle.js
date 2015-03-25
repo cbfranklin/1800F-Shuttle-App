@@ -3,6 +3,8 @@ var schedule = [{
 	name: "Shuttle Bus",
 	stops: ["NCR", "1800F"],
 	addresses: ["7th & D St SW", "E St side, wing 3 exit"],
+	maps: ["https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d776.4285708937543!2d-77.02207866235736!3d38.884778314271614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b79d4d62e08b%3A0xe2e23b0130745bbd!2zMzjCsDUzJzA1LjMiTiA3N8KwMDEnMTkuMyJX!5e0!3m2!1sen!2sus!4v1425308849009",
+			"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d776.298781415795!2d-77.041817!3d38.89665299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDUzJzQ4LjAiTiA3N8KwMDInMzAuNSJX!5e0!3m2!1sen!2sus!4v1425309535211"],
 	timetable: [
 		["08:30", "08:30"],
 		["08:50", "08:50"],
@@ -51,12 +53,28 @@ function initShuttle(){
 		searchAgain();
 		return false;
 	});
+
+	$('#shuttle .show-map').on('click',function(){
+		if($(this).hasClass('active')){
+			$(this).removeClass('active').siblings('iframe').hide().removeClass('active');
+		}
+		else{
+			var station = $(this).parents('.station').attr('data-station');
+			$(this).addClass('active').siblings('iframe').show().addClass('active').attr('src',schedule[0].maps[station]);
+		}
+	})
+
+	$('.btn-anchor').on('click',function(){
+		var anchor = $(this).attr('data-anchor');
+		$('#'+anchor).scrollToAnchor(-65);
+	});
 	
 };
 
 function initStations() {
 	for (var i = 0; i < stations.length; i++) {
-		var stationDiv = '<div class="station col-sm-6" data-station="' + i + '"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div>';
+		//var stationDiv = '<div class="station col-sm-6" data-station="' + i + '"><div class="station-timer"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div><div class="station-map"><button class="btn btn-default btn-block show-map"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Map</button><iframe style="display:none" src=""frameborder="0"></iframe></div></div>';
+		var stationDiv = '<div class="station col-sm-6" data-station="' + i + '"><div class="station-timer"><h3>Departing ' + stations[i] + '</h3><h4>' + schedule[0].addresses[i] + '</h4></div></div>';
 		$('#board').append(stationDiv);
 		var stationOpt = '<option value="' + i + '">' + stations[i] + '</option>';
 		$('#search select#stations').append(stationOpt);
@@ -93,7 +111,7 @@ function startCountdown(name, busID, stationID, time) {
 		var countdown = '<h5 id="' + id + '"></h5>';
 	}
 	if (stationID !== 'user') {
-		$('#shuttle #board .station[data-station=' + stationID + ']').append(countdown);
+		$('#shuttle #board .station[data-station=' + stationID + '] .station-timer').append(countdown);
 	} else {
 		$('#shuttle #results div').append(countdown);
 	}
@@ -152,7 +170,7 @@ function queue() {
 		if (noShuttles === true && $('#shuttle #board .station[data-station=' + i + '] .item').length === 0) {
 			var noShuttlesMessage = '<div class="item zoomIn animated noShuttles timeRed"><h4><em>No More Shuttles Today</em></h4></div>';
 			var stationID = i;
-			$('#shuttle #board .station[data-station=' + stationID + ']').append(noShuttlesMessage);
+			$('#shuttle #board .station[data-station=' + stationID + '] .station-timer').append(noShuttlesMessage);
 			$('#shuttle #board .station[data-station=' + stationID + '] .load').hide();
 			$('#shuttle #board .noShuttles').show();
 		}
@@ -207,3 +225,17 @@ if (!Array.prototype.indexOf) {
 		return -1;
 	};
 }
+jQuery.fn.extend({
+    scrollToAnchor: function(theOffset, theTime) {
+        var theSelector = this;
+        if (!theTime) {
+            var theTime = 500
+        }
+        if (!theOffset) {
+            var theOffset = 0;
+        }
+        $('html,body').animate({
+            scrollTop: theSelector.offset().top + theOffset
+        }, theTime);
+    }
+});
