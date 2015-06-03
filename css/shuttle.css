@@ -247,7 +247,7 @@ h2 .glyphicon {
     float: right;
 }
 .hero {
-    background: #337AB7;
+    background: #263092;
     color: #ededed;
     font-size: 22px;
     width: 20%;
@@ -266,6 +266,11 @@ h2 .glyphicon {
     display: table-cell;
     vertical-align: middle;
     padding-left: 60px;
+}
+.hero-inner a,
+.hero-inner a:active,
+.hero-inner a:visited{
+    color:#fff;
 }
 .hero-insite {
     display: table-cell;
@@ -354,7 +359,6 @@ nav.active {
     top: 0;
     left: 0;
     height: 60px;
-    background: #2D86DB;
     -webkit-box-shadow: 0px 0px 3px -1px rgba(125, 125, 125, 1);
     -moz-box-shadow: 0px 0px 3px -1px rgba(125, 125, 125, 1);
     box-shadow: 0px 0px 3px -1px rgba(125, 125, 125, 1);
