@@ -89,6 +89,11 @@ function searchSchedule() {
 	var time = $('#shuttle #search #time option:selected').attr('val');
 	var displayTime = moment(time, 'HH:mm').format('hh:mm A');
 	var time2 = moment(today + ' ' + time).add(90, 'minutes').format('HH:mm');
+	if (typeof ga !== "undefined") {
+        ga('send', 'event', 'Trip Planner', sName, displayTime);
+    } else {
+        console.log('send', 'event', 'Trip Planner', sName, removeLeadZero(displayTime));
+    }
 	$('<h4 class="results-for">' + sName + ', ' + removeLeadZero(displayTime) + '</h4><br>').insertAfter('#shuttle #results h3');
 	for (var m = 0; m < schedule[0].timetable.length; m++) {
 		var testTime = moment(today + ' ' + schedule[0].timetable[m][s]);
