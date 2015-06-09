@@ -102,19 +102,23 @@ function navigation() {
     router.on('hashchange', function(event) {
         if (window.location.hash.indexOf('undefined') === -1) {
             if (typeof ga !== "undefined") {
-                ga('send', 'pageview', gaCrumb + window.location.hash, null, document.title);
+                if (window.location.hash !== '' && window.location.hash !== '#' && window.location.hash !== '#/') {
+                    ga('send', 'pageview', gaCrumb + window.location.hash, null, document.title);
+                }
             } else {
-                console.log('send', 'pageview', gaCrumb + window.location.hash, null, document.title)
+                if (window.location.hash !== '' && window.location.hash !== '#' && window.location.hash !== '#/') {
+                    console.log('send', 'pageview', gaCrumb + window.location.hash, null, document.title)
+                }
             }
         }
     });
     //GA on pageload
-    if(window.location.hash.indexOf('departures') === -1){
-          if (typeof ga !== "undefined") {
-                ga('send', 'pageview', gaCrumb + window.location.hash, null, document.title);
-            } else {
-                console.log('send', 'pageview', gaCrumb + window.location.hash, null, document.title)
-            }
+    if (window.location.hash !== '' && window.location.hash !== '#' && window.location.hash !== '#/') {
+        if (typeof ga !== "undefined") {
+            ga('send', 'pageview', gaCrumb + window.location.hash, null, document.title);
+        } else {
+            console.log('send', 'pageview', gaCrumb + window.location.hash, null, document.title)
+        }
     }
-      
+
 };
